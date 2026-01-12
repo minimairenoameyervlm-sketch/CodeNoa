@@ -1,0 +1,1004 @@
+body {
+  margin: 0;
+  font-family: "Times New Roman", Times, serif;
+  background-color: pink;
+  box-sizing: border-box;
+}
+
+/* Toggle principal */
+#menu-toggle,
+#moto-toggle {
+  display: none;
+}
+
+/* Bouton menu */
+.menu-btn {
+  position: fixed;
+  color: #ffffff;
+  top: 20px;
+  left: 20px;
+  font-size: 30px;
+  cursor: pointer;
+  z-index: 1001;
+  transition: transform 0.3s ease;
+}
+
+.menu-btn:hover {
+  transform: rotate(90deg); /* rotation au hover pour effet fun */
+}
+
+/* Sidebar */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -260px; /* caché par défaut */
+  width: 260px;
+  height: 100%;
+  background: #333;
+  padding-top: 60px;
+  transition: left 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55); /* glisse douce */
+  z-index: 1000;
+  overflow-y: auto;
+}
+
+/* Liens */
+.sidebar a,
+.submenu-title {
+  display: block;
+  padding: 15px 20px;
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.sidebar a:hover,
+.submenu-title:hover {
+  background: #444;
+  transform: translateX(5px); /* petit décalage au survol */
+}
+
+/* Sous-menu */
+.submenu {
+  max-height: 0;          /* invisible par défaut */
+  overflow: hidden;
+  background: #222;
+  transition: max-height 0.4s ease, padding 0.4s ease;
+}
+
+.submenu a {
+  padding-left: 40px;
+  font-size: 14px;
+}
+
+/* Ouverture menu principal */
+#menu-toggle:checked + .menu-btn + .sidebar {
+  left: 0; /* glisse du côté visible */
+}
+
+/* Ouverture sous-menu Moto avec animation */
+#moto-toggle:checked + .submenu-title + .submenu {
+  max-height: 500px; /* valeur assez grande pour contenir tous les liens */
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+/* Contenu */
+.content {
+  padding: 40px;
+}
+
+
+.S1 {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 40px;
+  font-weight: 700;
+  margin-left: 350px;
+  letter-spacing: normal;
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+  z-index: 1;
+}
+
+.S3 {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 18px;
+  font-weight: 300;
+  letter-spacing: normal;
+  position: relative;
+  margin: 0;
+  text-decoration: none;
+}
+
+.motos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  overflow: visible;
+}
+
+.section {
+  width: 100%;
+  text-align: left;
+}
+
+.imgcontainer {
+  margin-left: 20px;
+  display: inline-block;
+  width: 240px;
+  padding: 12px 20px;
+  background-color: #dc2626;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer; /* montre que c’est interactif */
+}
+
+.imgcontainer img {
+  width: 100%;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Animation au survol */
+.imgcontainer:hover img {
+  transform: scale(1.05); /* grossit légèrement l’image */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* ombre plus marquée */
+}
+
+.imgcontainer:hover {
+  transform: translateY(-5px); /* décalage léger du container */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.images {
+  width: 200px;
+  padding: 0;
+  margin-top: 10px;
+  border-radius: 10px;
+  height: 160px;
+}
+
+.S6 {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 18px;
+  font-weight: 300;
+  letter-spacing: normal;
+  position: relative;
+  margin: 0;
+  text-decoration: none;
+}
+
+.S9 {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 18px;
+  font-weight: 300;
+  letter-spacing: normal;
+  position: relative;
+  margin: 0;
+  margin: 0;
+  text-decoration: none;
+}
+
+.S12 {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 18px;
+  font-weight: 300;
+  letter-spacing: normal;
+  position: relative;
+  margin: 0;
+  text-decoration: none;
+}
+
+.S15 {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 18px;
+  font-weight: 300;
+  letter-spacing: normal;
+  position: relative;
+  margin: 0;
+  text-decoration: none;
+}
+
+.S18 {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 18px;
+  font-weight: 300;
+  letter-spacing: normal;
+  position: relative;
+  margin: 0;
+  text-decoration: none;
+}
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+/* PALETTE BMW */
+.BMW {
+  --bmw-blue: #0066b1;
+  --bmw-dark: #0b0b0b;
+  --bmw-gray: #f2f2f2;
+  --bmw-text: #1a1a1a;
+}
+
+/* HEADER */
+.BMW header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--bmw-dark);
+  padding: 25px 40px;
+  border-bottom: 4px solid var(--bmw-blue);
+}
+
+/* TITRE PRINCIPAL */
+.RR1 {
+  color: white;
+  font-size: 2.6rem;
+  font-weight: 800;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+/* IMAGE */
+.RR2 {
+  width: 260px;
+  border-radius: 10px;
+  border: 3px solid var(--bmw-blue);
+  background-color: white;
+}
+
+/* SECTION */
+section {
+  max-width: 950px;
+  margin: 60px auto;
+  padding: 40px;
+  background-color: white;
+  border-left: 6px solid var(--bmw-blue);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+}
+
+/* TITRE SECTION */
+.RR3 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--bmw-dark);
+  margin-bottom: 25px;
+  text-transform: uppercase;
+}
+
+/* TEXTE */
+.RR4 {
+  font-size: 1.05rem;
+  line-height: 2;
+  color: var(--bmw-text);
+  text-align: justify;
+}
+
+/* Mise en valeur des chiffres clés */
+.RR4 strong,
+.RR4 b {
+  color: var(--bmw-blue);
+  font-weight: 700;
+}
+
+/* Espacement visuel entre les lignes */
+.RR4 br {
+  display: block;
+  content: "";
+  margin-bottom: 14px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    gap: 20px;
+    padding: 25px;
+    text-align: center;
+  }
+
+  .RR1 {
+    font-size: 2rem;
+  }
+
+  .RR2 {
+    width: 100%;
+    max-width: 330px;
+  }
+
+  section {
+    margin: 30px 20px;
+    padding: 30px;
+  }
+}
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+/* COULEURS BMW */
+.BMW {
+  --bmw-blue: #0066b1;
+  --bmw-dark: #0b0b0b;
+  --bmw-gray: #e6e6e6;
+  --bmw-text: #1a1a1a;
+}
+
+/* HEADER */
+.BMW header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--bmw-dark);
+  padding: 25px 40px;
+  border-bottom: 4px solid var(--bmw-blue);
+}
+
+.GS1 {
+  color: white;
+  font-size: 2.5rem;
+  font-weight: 800;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+/* IMAGE */
+.GS2 {
+  width: 240px;
+  border-radius: 10px;
+  border: 3px solid var(--bmw-blue);
+  background-color: white;
+}
+
+/* SECTION */
+section {
+  max-width: 900px;
+  margin: 60px auto;
+  padding: 40px;
+  background-color: white;
+  border-left: 6px solid var(--bmw-blue);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+}
+
+/* TITRE */
+.GS3 {
+  font-size: 2.1rem;
+  font-weight: 800;
+  color: var(--bmw-dark);
+  margin-bottom: 25px;
+  text-transform: uppercase;
+}
+
+/* TEXTE */
+.GS4 {
+  font-size: 1.05rem;
+  line-height: 2;
+  color: var(--bmw-text);
+}
+
+/* Mise en valeur chiffres & infos clés */
+.GS4 strong,
+.GS4 b {
+  color: var(--bmw-blue);
+  font-weight: 700;
+}
+/* Espacement visuel */
+.GS4 br {
+  display: block;
+  content: "";
+  margin-bottom: 14px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    gap: 20px;
+    padding: 25px;
+    text-align: center;
+  }
+
+  .GS1 {
+    font-size: 2rem;
+  }
+
+  .GS2 {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  section {
+    margin: 30px 20px;
+    padding: 30px;
+  }
+}
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+/* VARIABLES MBK (SCOPÉES À LA PAGE) */
+body.Nitro {
+  --mbk-yellow: #ffd600;
+  --mbk-dark: #111;
+  --mbk-text: #1a1a1a;
+  --mbk-gray: #f4f4f4;
+}
+
+/* HEADER */
+body.Nitro header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--mbk-dark);
+  padding: 25px 40px;
+  border-bottom: 4px solid var(--mbk-yellow);
+}
+
+/* TITRE PRINCIPAL */
+body.Nitro .MBK1 {
+  color: white;
+  font-size: 2.4rem;
+  font-weight: 900;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* IMAGE */
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+/* PALETTE HONDA */
+.Honda {
+  --honda-red: #cc0000;
+  --honda-dark: #0d0d0d;
+  --honda-gray: #f4f4f4;
+  --honda-text: #1a1a1a;
+}
+
+/* HEADER */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--honda-dark);
+  padding: 25px 40px;
+  border-bottom: 4px solid var(--honda-red);
+}
+
+/* TITRE PRINCIPAL */
+.CB1 {
+  color: white;
+  font-size: 2.5rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* IMAGE */
+.CB2 {
+  width: 250px;
+  border-radius: 10px;
+  border: 3px solid var(--honda-red);
+  background-color: white;
+}
+
+/* SECTION */
+section {
+  max-width: 950px;
+  margin: 60px auto;
+  padding: 40px;
+  background-color: white;
+  border-left: 6px solid var(--honda-red);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+}
+
+/* TITRE SECTION */
+.CB3 {
+  font-size: 2.1rem;
+  font-weight: 800;
+  color: var(--honda-dark);
+  margin-bottom: 25px;
+  text-transform: uppercase;
+}
+
+/* TEXTE */
+.CB4 {
+  font-size: 1.05rem;
+  line-height: 2;
+  color: var(--honda-text);
+  text-align: justify;
+}
+
+/* Mise en valeur infos clés */
+.CB4 strong,
+.CB4 b {
+  color: var(--honda-red);
+  font-weight: 700;
+}
+
+/* Espacement visuel */
+.CB4 br {
+  display: block;
+  content: "";
+  margin-bottom: 14px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    gap: 20px;
+    padding: 25px;
+    text-align: center;
+  }
+
+  .CB1 {
+    font-size: 2rem;
+  }
+
+  .CB2 {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  section {
+    margin: 30px 20px;
+    padding: 30px;
+  }
+}
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+/* VARIABLES DERBI (SCOPÉES À LA PAGE) */
+body.Derbi {
+  --derbi-red: #c00000;
+  --derbi-dark: #0e0e0e;
+  --derbi-text: #1a1a1a;
+  --derbi-gray: #f4f4f4;
+}
+
+/* HEADER */
+body.Derbi header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--derbi-dark);
+  padding: 25px 40px;
+  border-bottom: 4px solid var(--derbi-red);
+}
+
+/* TITRE PRINCIPAL */
+body.Derbi .M1 {
+  color: white;
+  font-size: 2.4rem;
+  font-weight: 900;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* IMAGE */
+body.Derbi .M2 {
+  width: 240px;
+  border-radius: 8px;
+  border: 3px solid var(--derbi-red);
+  background-color: white;
+}
+
+/* SECTION */
+body.Derbi section {
+  max-width: 900px;
+  margin: 60px auto;
+  padding: 40px;
+  background-color: white;
+  border-left: 6px solid var(--derbi-red);
+}
+
+/* RESET GÉNÉRAL */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+/* VARIABLES HONDA (SCOPÉES À LA PAGE) */
+body.Honda {
+  --honda-red: #cc0000;
+  --honda-dark: #111;
+  --honda-text: #1a1a1a;
+  --honda-gray: #f5f5f5;
+}
+
+/* HEADER */
+body.Honda header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--honda-dark);
+  padding: 25px 40px;
+  border-bottom: 4px solid var(--honda-red);
+}
+
+/* TITRE PRINCIPAL */
+body.Honda .V1 {
+  color: white;
+  font-size: 2.4rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* IMAGE */
+body.Honda .V2 {
+  width: 250px;
+  border-radius: 10px;
+  border: 3px solid var(--honda-red);
+  background-color: white;
+}
+
+/* SECTION */
+body.Honda section {
+  max-width: 950px;
+  margin: 60px auto;
+  padding: 40px;
+  background-color: white;
+  border-left: 6px solid var(--honda-red);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+}
+
+/* TITRE SECTION */
+body.Honda .V3 {
+  font-size: 2.1rem;
+  font-weight: 800;
+  color: var(--honda-dark);
+  margin-bottom: 25px;
+  text-transform: uppercase;
+}
+
+/* TEXTE */
+body.Honda .V4 {
+  font-size: 1.05rem;
+  line-height: 2;
+  color: var(--honda-text);
+  text-align: justify;
+}
+
+/* Mise en valeur chiffres clés */
+body.Honda .V4 strong,
+body.Honda .V4 b {
+  color: var(--honda-red);
+  font-weight: 700;
+}
+
+/* ESPACEMENT VISUEL */
+body.Honda .V4 br {
+  display: block;
+  content: "";
+  margin-bottom: 14px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  body.Honda header {
+    flex-direction: column;
+    gap: 20px;
+    padding: 25px;
+    text-align: center;
+  }
+
+  body.Honda .V1 {
+    font-size: 2rem;
+  }
+
+  body.Honda .V2 {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  body.Honda section {
+    margin: 30px 20px;
+    padding: 30px;
+  }
+}
+
+.L1 {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 40px;
+  font-weight: 700;
+  margin-left: 350px;
+  letter-spacing: normal;
+  position: relative;
+  overflow: hidden;
+  margin-top: 20px;
+  text-decoration: none;
+}
+
+.L2 {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 24px;
+  font-weight: bold;
+  margin: 20px 0;
+}
+
+.form {
+  width: 360px;
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  margin: 40px auto;
+}
+
+.field {
+  position: relative;
+  margin-bottom: 28px;
+}
+
+/* INPUTS */
+.L3,
+.L4 {
+  width: 300px;
+  padding: 16px;
+  font-size: 16px;
+  color: #fff;
+  font-family: "Times New Roman", Times, serif;
+
+  background: linear-gradient(135deg, #00ddeb 0%, #5b42f3 50%, #af40ff 100%);
+
+  background-size: 200% 200%;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+
+  box-shadow: 0 6px 18px rgba(91, 66, 243, 0.3),
+    0 0 20px rgba(175, 64, 255, 0.25);
+
+  transition: background-position 0.6s ease, transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+/* 🎯 HOVER */
+.L3:hover,
+.L4:hover {
+  background-position: 100% 50%;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(91, 66, 243, 0.55),
+    0 0 35px rgba(175, 64, 255, 0.45);
+}
+
+/* 🔥 FOCUS (clavier) */
+.L3:focus,
+.L4:focus {
+  background-position: 100% 50%;
+  transform: translateY(-1px);
+  box-shadow: 0 14px 35px rgba(91, 66, 243, 0.65),
+    0 0 45px rgba(175, 64, 255, 0.55);
+}
+
+/* Placeholder */
+/* Quand l'input est focus ou rempli */
+.L3:focus + label,
+.L3:not(:placeholder-shown) + label,
+.L4:focus + label,
+.L4:not(:placeholder-shown) + label {
+  top: -8px;
+  left: 12px;
+  font-size: 12px;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 0 6px;
+}
+
+/* ===== BOUTON SUBMIT (TON STYLE) ===== */
+.L5 {
+  width: 300px;
+  padding: 16px 24px;
+  font-size: 20px;
+  font-family: "Times New Roman", Times, serif, sans-serif;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+
+  background: linear-gradient(135deg, #00ddeb 0%, #5b42f3 50%, #af40ff 100%);
+  background-size: 200% 200%;
+
+  box-shadow: 0 10px 25px rgba(91, 66, 243, 0.35),
+    0 0 30px rgba(175, 64, 255, 0.25);
+
+  transition: background-position 0.6s ease, transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+/* 🎯 HOVER */
+.L5:hover {
+  background-position: 100% 50%;
+  transform: translateY(-2px);
+  box-shadow: 0 15px 35px rgba(91, 66, 243, 0.55),
+    0 0 45px rgba(175, 64, 255, 0);
+}
+
+.CUC1 {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 40px;
+  font-weight: 700;
+  letter-spacing: normal;
+  position: relative;
+  overflow: hidden;
+  margin-top: 20px;
+  text-decoration: none;
+  text-align: center;
+}
+
+.CUC2,
+.CUC3,
+.CUC4,
+.CUC5,
+.CUC6 {
+  width: 300px;
+  padding: 16px;
+  font-size: 16px;
+  color: #fff;
+  font-family: Phantomsans, sans-serif;
+
+  background: linear-gradient(135deg, #00ddeb 0%, #5b42f3 50%, #af40ff 100%);
+
+  background-size: 200% 200%;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+
+  box-shadow: 0 6px 18px rgba(91, 66, 243, 0.3),
+    0 0 20px rgba(175, 64, 255, 0.25);
+
+  transition: background-position 0.6s ease, transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+/* 🎯 HOVER */
+.CUC2:hover,
+.CUC3:hover,
+.CUC4:hover,
+.CUC5:hover,
+.CUC6:hover {
+  background-position: 100% 50%;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(91, 66, 243, 0.55),
+    0 0 35px rgba(175, 64, 255, 0.45);
+}
+
+/* 🔥 FOCUS (clavier) */
+.CUC2:focus,
+.CUC3:focus,
+.CUC4:focus,
+.CUC5:focus,
+.CUC6:focus {
+  background-position: 100% 50%;
+  transform: translateY(-1px);
+  box-shadow: 0 14px 35px rgba(91, 66, 243, 0.65),
+    0 0 45px rgba(175, 64, 255, 0.55);
+}
+
+/* Placeholder */
+.CUC2::placeholder,
+.CUC3::placeholder,
+.CUC4::placeholder,
+.CUC5::placeholder,
+.CUC6::placeholder {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.CUC7 {
+  width: 200px;
+  padding: 16px 24px;
+  font-size: 20px;
+  font-family: "Times New Roman", Times, serif, sans-serif;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+
+  background: linear-gradient(135deg, #00ddeb 0%, #5b42f3 50%, #af40ff 100%);
+  background-size: 200% 200%;
+
+  box-shadow: 0 10px 25px rgba(91, 66, 243, 0.35),
+    0 0 30px rgba(175, 64, 255, 0.25);
+
+  transition: background-position 0.6s ease, transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+/* 🎯 HOVER */
+.CUC7:hover {
+  background-position: 100% 50%;
+  transform: translateY(-2px);
+  box-shadow: 0 15px 35px rgba(91, 66, 243, 0.55),
+    0 0 45px rgba(175, 64, 255, 0);
+}
+
+.contact {
+  max-width: 800px;
+  margin: 60px auto;
+  padding: 30px 40px;
+
+  background: #ffffff;
+  border: 3px solid var(--accent);
+  border-radius: 12px;
+
+  font-family: "Segoe UI", Arial, sans-serif;
+  color: #111;
+}
+
+/* Titre */
+.contact h2 {
+  margin-bottom: 25px;
+  font-size: 32px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* Logo */
+.contact-logo {
+  max-width: 200px;
+  display: block;
+  margin: 20px 0 30px;
+}
+
+/* Texte */
+.contact p {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+/* Lien email */
+.contact a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.contact a:hover {
+  text-decoration: underline;
+}
+
+/* Copyright */
+.contact .copyright {
+  margin-top: 30px;
+  font-size: 14px;
+  color: #666;
+  text-align: center;
+}
